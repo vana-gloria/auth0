@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "4dfa2cb1-adc2-4e86-9091-89825769ead7",
+		"name": "auth0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "APITest",
+			"item": [
+				{
+					"name": "public",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:3000/public",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"public"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authorized",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:3000/authGeneral",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"authGeneral"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "secret",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:3000/authSecret",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"authSecret"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "askToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "77599470-8b32-42f1-808b-27afc566351b",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"client_id\":\"TNu2chTZ0vRSOz3N1G98xwjAP21nAJak\",\"client_secret\":\"TmqRjhvKcUNZa1A-K6-dfUcd_JQjIIBNcQPCLHilsNg4Ap4tTH5Cnp883MP_Byp7\",\"audience\":\"rnd\",\"grant_type\":\"client_credentials\"}"
+				},
+				"url": {
+					"raw": "https://dev-157e40e8.auth0.com/oauth/token",
+					"protocol": "https",
+					"host": [
+						"dev-157e40e8",
+						"auth0",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
