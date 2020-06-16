@@ -1,0 +1,45 @@
+swagger: "2.0"
+info:
+  description: "Test"
+  title: "Test"
+  version: "1.0.0"
+host: "echo-api.endpoints.auth0api-280422.cloud.goog"
+schemes:
+  - "http"
+paths:
+  "/public":
+    get:
+      operationId: "public"
+      responses:
+        200:
+          description: "Public"
+          schema:
+            type: string
+  "/authGeneral":
+    get:
+      operationId: "general"
+      security:
+        - auth0_jwk: []
+      responses:
+        200:
+          description: "Public"
+          schema:
+            type: string
+  "/authSecret":
+    get:
+      operationId: "secret"
+      security:
+        - auth0_jwk: []
+      responses:
+        200:
+          description: "Public"
+          schema:
+            type: string
+securityDefinitions:
+  auth0_jwk:
+    authorizationUrl: ""
+    flow: "implicit"
+    type: "oauth2"
+    x-google-issuer: "https://dev-157e40e8.auth0.com/"
+    x-google-jwks_uri: "https://dev-157e40e8.auth0.com/.well-known/jwks.json"
+    x-google-audiences: "rnd"
