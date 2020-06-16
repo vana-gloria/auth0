@@ -14,14 +14,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "127.0.0.1:3000/public",
+							"raw": "http://34.69.179.176/public",
+							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"34",
+								"69",
+								"179",
+								"176"
 							],
-							"port": "3000",
 							"path": [
 								"public"
 							]
@@ -45,14 +45,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "127.0.0.1:3000/authGeneral",
+							"raw": "http://34.69.179.176/authGeneral",
+							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"34",
+								"69",
+								"179",
+								"176"
 							],
-							"port": "3000",
 							"path": [
 								"authGeneral"
 							]
@@ -76,14 +76,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "127.0.0.1:3000/authSecret",
+							"raw": "http://34.69.179.176/authSecret",
+							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"34",
+								"69",
+								"179",
+								"176"
 							],
-							"port": "3000",
 							"path": [
 								"authSecret"
 							]
