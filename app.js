@@ -4,8 +4,6 @@ var jwt = require('express-jwt');
 var jwks = require('jwks-rsa');
 var jwtAuthz = require('express-jwt-authz');
 
-module.exports = app;
-
 var jwtCheck = jwt({
   secret: jwks.expressJwtSecret({
     cache: true,
@@ -31,4 +29,5 @@ app.get('/authSecret', jwtCheck, jwtAuthz(['secret']), function (req, res) {
   res.send('Secured Secret Resource');
 });
 
+app.listen(8080);
 module.exports = app;
